@@ -10,6 +10,12 @@ var builder = WebApplication.CreateBuilder(args);
 // 1. Recuperar a Connection String do appsettings.json
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
+// Garante que a aplicação não rode com uma connection string vazia ou placeholder
+if (string.IsNullOrWhiteSpace(connectionString) || connectionString.Contains("YOUR_HOST", System.StringComparison.OrdinalIgnoreCase))
+{
+    throw new System.InvalidOperationException("Connection string 'DefaultConnection' não configurada. Defina via Secret Manager, variável de ambiente ConnectionStrings__DefaultConnection ou appsettings.* seguro.");
+}
+
 // 2. Adicionar o DbContext ao contêiner de serviços
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(connectionString) // Informamos que vamos usar Npgsql (PostgreSQL)
