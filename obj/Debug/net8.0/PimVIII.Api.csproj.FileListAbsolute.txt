@@ -226,3 +226,4 @@ D:\Projetos\PIM VIII\PimVIII.Api\obj\Debug\net8.0\refint\PimVIII.Api.dll
 D:\Projetos\PIM VIII\PimVIII.Api\obj\Debug\net8.0\PimVIII.Api.pdb
 D:\Projetos\PIM VIII\PimVIII.Api\obj\Debug\net8.0\PimVIII.Api.genruntimeconfig.cache
 D:\Projetos\PIM VIII\PimVIII.Api\obj\Debug\net8.0\ref\PimVIII.Api.dll
+D:\Projetos\PIM VIII\PimVIII.Api\obj\Debug\net8.0\PimVIII.Api.sourcelink.json

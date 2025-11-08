@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PimVIII.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c302ca1cd920a90626ac08d17c3319d14060def9")]
 [assembly: System.Reflection.AssemblyProductAttribute("PimVIII.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PimVIII.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
