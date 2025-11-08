@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PimVIII.Api", "PimVIII.Api\PimVIII.Api.csproj", "{58DB6669-5AA3-C58E-A873-FCD1C1BA4FB0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{58DB6669-5AA3-C58E-A873-FCD1C1BA4FB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58DB6669-5AA3-C58E-A873-FCD1C1BA4FB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58DB6669-5AA3-C58E-A873-FCD1C1BA4FB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58DB6669-5AA3-C58E-A873-FCD1C1BA4FB0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {144AF74B-2045-4EFE-A93E-4F80807E1EC5}
+	EndGlobalSection
+EndGlobal
