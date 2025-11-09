@@ -1,31 +1,26 @@
 # Estágio 1: Build
-# Usamos a imagem oficial do SDK do .NET 8 (LTS)
 FROM mcr.microsoft.com/dotnet/sdk:8.0-alpine AS build
 WORKDIR /src
 
-# Copia todos os arquivos .csproj e restaura as dependências da API
-# (Assumindo que sua API está em "PimVIII.Api/PimVIII.Api.csproj")
+# Copia os arquivos de projeto (.sln e .csproj) da raiz
 COPY *.sln .
-COPY PimVIII-API/*.csproj PimVIII.Api/
-RUN dotnet restore PimVIII-API/PimVIII.Api.csproj
+COPY *.csproj .
 
-# Copia o restante do código-fonte e faz o publish
+# Restaura as dependências do projeto da API
+# (O arquivo .csproj está na raiz /src)
+RUN dotnet restore PimVIII.Api.csproj
+
+# Copia todo o resto do código-fonte
 COPY . .
-WORKDIR /src/PimVIII-API
-RUN dotnet publish -c Release -o /app/publish
+
+# Publica o projeto da API (o .csproj está na raiz /src)
+RUN dotnet publish PimVIII.Api.csproj -c Release -o /app/publish
 
 # Estágio 2: Runtime
-# Usamos a imagem de runtime do ASP.NET, que é menor
 FROM mcr.microsoft.com/dotnet/aspnet:8.0-alpine AS final
 WORKDIR /app
 COPY --from=build /app/publish .
 
-# Expõe a porta interna do container.
-# Vamos usar 8080 para não ter conflito com nada.
-EXPOSE 8080
-
-# Define a URL que o Kestrel (servidor .NET) vai ouvir
-ENV ASPNETCORE_URLS=http://+:8080
-
-# Ponto de entrada
+# A porta e a URL são definidas no docker-compose.yml,
+# então não precisamos defini-las aqui.
 ENTRYPOINT ["dotnet", "PimVIII.Api.dll"]
