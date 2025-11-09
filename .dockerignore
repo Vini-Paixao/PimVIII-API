@@ -1,0 +1,3 @@
+# Exclui todos os artefatos de build e cache
+**/bin/
+**/obj/

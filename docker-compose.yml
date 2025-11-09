@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  pim-api:
+    build: .
+    container_name: pim-api
+    restart: unless-stopped
+    
+    # Mantemos o 'network_mode: "host"'
+    # 1. Permite que o Nginx no host acesse o container em 127.0.0.1:8001
+    # 2. Permite que o container acesse o IP externo do seu PostgreSQL (38.242.205.136)
+    network_mode: "host"
+    
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      
+      # O Kestrel vai ouvir no localhost do VPS, porta 8001 (para o Nginx)
+      - ASPNETCORE_URLS=http://127.0.0.1:8001
+      
+      - ConnectionStrings__DefaultConnection=Host=38.242.205.136;Port=5432;Database=PimVIII_DB;Username=pimviii;Password=zxYzpUZvpzDEiRTo6roO7XXBm;SSL Mode=Prefer;Trust Server Certificate=true;Timeout=30
