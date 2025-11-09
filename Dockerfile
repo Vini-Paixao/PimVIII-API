@@ -6,12 +6,12 @@ WORKDIR /src
 # Copia todos os arquivos .csproj e restaura as dependências da API
 # (Assumindo que sua API está em "PimVIII.Api/PimVIII.Api.csproj")
 COPY *.sln .
-COPY PimVIII.Api/*.csproj PimVIII.Api/
-RUN dotnet restore PimVIII.Api/PimVIII.Api.csproj
+COPY PimVIII-API/*.csproj PimVIII.Api/
+RUN dotnet restore PimVIII-API/PimVIII.Api.csproj
 
 # Copia o restante do código-fonte e faz o publish
 COPY . .
-WORKDIR /src/PimVIII.Api
+WORKDIR /src/PimVIII-API
 RUN dotnet publish -c Release -o /app/publish
 
 # Estágio 2: Runtime
