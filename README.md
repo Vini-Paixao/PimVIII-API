@@ -1,5 +1,8 @@
 # PimVIII API
 
+![C#](https://img.shields.io/badge/C%23-100%25-239120?logo=csharp)
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+
 API RESTful desenvolvida em ASP.NET Core 8 para gerenciar um ecossistema de streaming educacional. O sistema expõe CRUDs completos para usuários, criadores, conteúdos e playlists, além de tratar os relacionamentos entre eles via Entity Framework Core e PostgreSQL.
 
 ## Recursos principais
